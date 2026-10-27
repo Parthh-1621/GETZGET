@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121214">
+<title>GetZget – Gear to fly, dive, ride and vlog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121214;--card:#18181c;--line:#26262c;--ink:#ececef;--mut:#9a98a3;--o1:#ff6b52;--o2:#ffd2c2;--grad:linear-gradient(110deg,var(--o1),var(--o2));box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{color-scheme:dark;scroll-behavior:smooth;height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Unbounded,"DM Sans",system-ui,sans-serif;margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 max(22px,env(safe-area-inset-right)) 0 max(22px,env(safe-area-inset-left))}
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font-weight:700;background:#ff6b52;color:#160a07;transition:transform .2s,box-shadow .25s}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px -10px #ff6b52}}
+.btn.ghost{background:rgba(18,18,20,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+@media(hover:hover){.btn.ghost:hover{border-color:var(--o2);box-shadow:none}}
+a:focus-visible{outline:3px solid var(--o2);outline-offset:3px}
+header{position:fixed;inset:0 0 auto;z-index:10;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(var(--bg),transparent)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font:800 20px Unbounded,sans-serif}.logo i{font-style:normal;color:#ff6b52}
+header .btn{padding:10px 20px;font-size:15px}
+.intro{position:fixed;inset:0;z-index:50;background:#121214;display:grid;place-items:center;font:800 28px Unbounded,sans-serif;animation:ix 1.2s ease forwards;pointer-events:none}.intro i{font-style:normal;color:#ff6b52}
+@keyframes ix{0%,40%{opacity:1}100%{opacity:0;visibility:hidden}}
+.hn{display:flex;align-items:center;gap:24px}.hn .tx{color:#e8dcd6;font-size:15px}.hn .tx:hover{color:#fff}
+html{scroll-padding-top:70px}
+.art svg{width:min(82%,380px);height:auto;position:relative;overflow:visible}
+.art .drone{animation:fl 3.8s ease-in-out infinite;filter:drop-shadow(0 18px 30px rgba(255,107,82,.25))}
+.art .lensv{width:min(64%,290px);filter:drop-shadow(0 0 46px rgba(255,107,82,.5))}
+.rg1{transform-origin:150px 150px;animation:sp 70s linear infinite}.rg2{transform-origin:150px 150px;animation:sp 90s linear infinite reverse}
+.iris{animation:irs 6s ease-in-out infinite}@keyframes irs{0%,100%{transform:scale(1.08) rotate(0)}50%{transform:scale(.7) rotate(22deg)}}
+header.sc{background:rgba(18,18,20,.84);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #26262c}
+.c .art,.d .art{inset:0;display:block;overflow:hidden}.c .art svg,.d .art svg{position:absolute;inset:0;width:100%;height:100%;max-width:none;overflow:hidden}
+.c .art::after,.d .art::after{content:"";position:absolute;inset:auto 0 0 0;height:48%;background:linear-gradient(transparent,rgba(18,18,20,.92))}
+.wvx{animation:wvs 7s linear infinite}@keyframes wvs{to{transform:translateX(-150px)}}
+.ray{transform-origin:150px 0;animation:sway 7s ease-in-out infinite alternate}@keyframes sway{from{transform:rotate(-4deg)}to{transform:rotate(5deg)}}
+@keyframes sw{from{transform:translateX(-50px)}to{transform:translateX(350px)}}
+.bb2{animation:rs 5s ease-in infinite;opacity:0}@keyframes rs{0%{transform:translateY(0);opacity:0}15%{opacity:.85}100%{transform:translateY(-170px);opacity:0}}
+.cam{animation:fl 4s ease-in-out infinite}
+.rd{stroke-dasharray:22 18;animation:dsh .55s linear infinite}@keyframes dsh{to{stroke-dashoffset:40}}
+.spl{animation:spl 1.3s linear infinite}@keyframes spl{from{transform:translateX(0);opacity:.9}to{transform:translateX(-80px);opacity:0}}
+.bk{animation:bnc .5s ease-in-out infinite}@keyframes bnc{50%{transform:translateY(-2.5px)}}
+.wh{animation:sp .6s linear infinite}
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:680px;overflow:hidden;background:linear-gradient(#121214 0%,#240e0b 36%,#6a2316 62%,#e0522f 84%,#ff9a7a 100%)}
+.px{position:absolute;inset:0;transition:transform .35s ease-out;transform:translate3d(calc(var(--px,0)*var(--k)*1px),calc(var(--py,0)*var(--k)*.5px),0);pointer-events:none}
+.sun{position:absolute;left:50%;bottom:21%;width:min(36vw,320px);aspect-ratio:1;border-radius:50%;transform:translate(-50%,40%);background:radial-gradient(circle,#fff 0,#ffe3c4 50%,#ffbfa8 78%);box-shadow:0 0 110px 36px rgba(255,150,110,.5),0 0 320px 130px rgba(255,107,82,.45);animation:rise 3.4s cubic-bezier(.2,.7,.2,1) .1s both}
+@keyframes rise{from{transform:translate(-50%,130%);opacity:0}to{transform:translate(-50%,40%);opacity:1}}
+.mtn{position:absolute;left:-6%;right:-6%;bottom:0;height:46%}
+.mtn svg{position:absolute;inset:0;width:100%;height:100%;animation:up 1.8s cubic-bezier(.2,.7,.2,1) both}
+.mtn.f svg{animation-delay:.5s}.mtn.m svg{animation-delay:.7s}.mtn.n svg{animation-delay:.9s}
+@keyframes up{from{transform:translateY(22%);opacity:0}to{transform:none;opacity:1}}
+.fog{position:absolute;left:0;right:0;bottom:11%;height:24%;background:linear-gradient(transparent,rgba(255,150,110,.26),transparent);pointer-events:none}
+.fly{position:absolute;top:44%;left:0;z-index:2;animation:fly 26s linear infinite;pointer-events:none}
+.fly svg{width:92px;height:auto;display:block;animation:bob 3s ease-in-out infinite}
+@keyframes fly{from{transform:translateX(-140px)}to{transform:translateX(calc(100vw + 40px))}}
+@keyframes bob{50%{transform:translateY(-9px) rotate(-3deg)}}
+.rt{animation:rt .12s linear infinite alternate;transform-box:fill-box;transform-origin:center}
+@keyframes rt{to{transform:scaleX(.4)}}
+.led{animation:led 1.4s steps(1) infinite}
+@keyframes led{50%{opacity:0}}
+.copy{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;text-align:center;padding:13vh 22px 0}
+.hero h1{font-size:clamp(34px,7.2vw,104px);margin:18px 0 14px;white-space:nowrap}
+.hero p{max-width:58ch;color:#f1e6e1;font-size:19px;margin:0 0 24px}
+.pill{display:inline-flex;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.2);background:rgba(18,12,10,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;padding:7px 16px;font-size:14px;color:#f1e6e1}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 #fff;animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px transparent}}
+.cy{display:inline-block;height:1.05em;overflow:hidden;vertical-align:bottom}
+.cy div{animation:cy 10s cubic-bezier(.7,0,.2,1) infinite}
+.cy span{display:block;height:1.25em;line-height:1.05;background:linear-gradient(110deg,#ffbfa8,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes cy{0%,20%{transform:none}25%,45%{transform:translateY(-20%)}50%,70%{transform:translateY(-40%)}75%,95%{transform:translateY(-60%)}100%{transform:translateY(-80%)}}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.in{opacity:0;transform:translateY(24px);animation:in .9s cubic-bezier(.2,.8,.2,1) forwards}
+.in:nth-child(1){animation-delay:.6s}.in:nth-child(2){animation-delay:.75s}.in:nth-child(3){animation-delay:.9s}.in:nth-child(4){animation-delay:1.05s}
+@keyframes in{to{opacity:1;transform:none}}
+.hud{position:absolute;inset:80px 18px 18px;z-index:3;pointer-events:none;font:500 12px/1 "DM Sans",sans-serif;letter-spacing:.1em;color:rgba(255,255,255,.88);opacity:0;animation:in 1s 1.6s forwards}
+.hud i{position:absolute;width:26px;height:26px;border:2px solid rgba(255,255,255,.7)}
+.hud .k1{left:0;top:0;border-right:0;border-bottom:0}.hud .k2{right:0;top:0;border-left:0;border-bottom:0}.hud .k3{left:0;bottom:0;border-right:0;border-top:0}.hud .k4{right:0;bottom:0;border-left:0;border-top:0}
+.hud span{position:absolute}
+.hud .tl{left:38px;top:8px}.hud .tr{right:38px;top:8px}.hud .bl{left:38px;bottom:8px}.hud .br{right:38px;bottom:8px}
+.hud .tl::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4d5e;margin-right:8px;animation:led 1.2s steps(1) infinite}
+@media(max-width:640px){.hud .tr,.hud .br{display:none}.hero p{font-size:17px}}
+/* ticker */
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;background:#0e0e10}
+.mq div{display:flex;gap:44px;width:max-content;animation:mq 30s linear infinite;font:600 18px Unbounded,sans-serif;color:#55555e;white-space:nowrap}
+.mq b{color:var(--o1)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* bento */
+section{padding:96px 0}
+h2{font-size:clamp(28px,4.6vw,52px);max-width:16ch;margin-bottom:38px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.t{position:relative;isolation:isolate;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:var(--card);padding:26px;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;transition:border-color .3s,transform .3s}
+.t::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,107,82,.22),transparent 60%);opacity:0;transition:opacity .3s}
+@media(hover:hover){.t:hover{border-color:#5a3020;transform:translateY(-4px)}.t:hover::before{opacity:1}}
+.t h3{font-size:24px;position:relative}.t p{color:var(--mut);margin:6px 0 0;position:relative;max-width:30ch}
+.t u{text-decoration:none;font-weight:700;color:var(--o2);margin-top:14px;position:relative}
+.a{grid-column:span 3;min-height:460px;background:linear-gradient(180deg,#121214 0%,#5a2012 68%,#e0522f)}.a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:36%;background:#121214;clip-path:polygon(0 100%,0 58%,10% 34%,22% 58%,36% 16%,50% 52%,64% 26%,78% 58%,91% 36%,100% 56%,100% 100%)}.b{grid-column:span 3;min-height:460px;background:radial-gradient(circle at 50% 36%,#5a2012,#18181c 72%)}.c,.d,.e{grid-column:span 2;min-height:360px}.c{background:linear-gradient(#18181c,#2a120e)}.d{background:linear-gradient(120deg,#18181c,#341610)}.a .art,.b .art{inset:0 0 24% 0}.a .dr{scale:1.5}.b .ln{scale:1.3}.t h3,.t u{z-index:1}
+@media(max-width:860px){.a,.b,.c,.d,.e{grid-column:1/-1}.a,.b{min-height:340px}}
+.art{position:absolute;inset:0 0 40% 0;display:grid;place-items:center}
+/* drone radar */
+.rad i{position:absolute;border:1.5px solid rgba(255,107,82,.55);border-radius:50%;width:60px;height:60px;animation:rad 4s linear infinite;opacity:0}
+.rad i:nth-child(2){animation-delay:1.33s}.rad i:nth-child(3){animation-delay:2.66s}
+@keyframes rad{0%{transform:scale(.4);opacity:.9}100%{transform:scale(5.5);opacity:0}}
+.dr{position:relative;width:110px;height:70px;animation:fl 3.6s ease-in-out infinite}
+.dr b{position:absolute;left:30px;top:22px;width:50px;height:28px;border-radius:10px;background:linear-gradient(#3a3a42,#1f1f24);border:1.5px solid var(--o2)}
+.dr b::after{content:"";position:absolute;left:19px;top:30px;width:12px;height:12px;border-radius:50%;background:#000;border:2px solid var(--o2)}
+.dr s{position:absolute;width:38px;height:5px;border-radius:50%;background:var(--o2);opacity:.8;animation:rp .18s linear infinite alternate;text-decoration:none}
+.dr s:nth-child(2){left:-6px;top:6px}.dr s:nth-child(3){right:-6px;top:6px;animation-delay:.05s}.dr s:nth-child(4){left:-6px;top:50px}.dr s:nth-child(5){right:-6px;top:50px;animation-delay:.05s}
+@keyframes rp{to{transform:scaleX(.45)}}
+@keyframes fl{50%{transform:translateY(-14px) rotate(-2deg)}}
+/* lens */
+.ln{position:relative;width:180px;height:180px;border-radius:50%;background:conic-gradient(from 0deg,#ff6b52,#ffffff,#241613,#ff6b52,#ffffff,#241613,#ff6b52);animation:sp 9s linear infinite;box-shadow:0 0 70px -10px rgba(255,107,82,.55)}
+.ln::before{content:"";position:absolute;inset:16px;border-radius:50%;background:#121214}
+.ln::after{content:"";position:absolute;inset:48px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffffff 0,#ff6b52 25%,#140a08 70%);animation:sp 9s linear infinite reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+/* waves */
+.wv{position:absolute;left:0;bottom:0;width:200%;height:55%;animation:wv 7s linear infinite}
+.wv.two{animation-duration:11s;animation-direction:reverse;opacity:.5;bottom:12px}
+@keyframes wv{to{transform:translateX(-50%)}}
+.bub i{position:absolute;bottom:40%;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--o2);animation:bb 4s ease-in infinite;opacity:0}
+.bub i:nth-child(1){left:30%}.bub i:nth-child(2){left:52%;animation-delay:1.3s}.bub i:nth-child(3){left:70%;animation-delay:2.4s}
+@keyframes bb{0%{transform:translateY(60px);opacity:0}30%{opacity:.9}100%{transform:translateY(-110px);opacity:0}}
+/* speed */
+.sl i{position:absolute;height:3px;border-radius:3px;background:var(--grad);left:-40%;width:40%;animation:sl 1.6s linear infinite;opacity:.8}
+.sl i:nth-child(1){top:22%}.sl i:nth-child(2){top:38%;animation-delay:.5s;width:55%}.sl i:nth-child(3){top:54%;animation-delay:1s}.sl i:nth-child(4){top:70%;animation-delay:.25s;width:30%}
+@keyframes sl{to{left:110%}}
+/* stat */
+.big{font:800 clamp(56px,9vw,84px) Unbounded,sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;position:absolute;top:30px;left:26px;line-height:1}
+.stars{position:absolute;top:122px;left:28px;color:var(--o2);letter-spacing:4px}
+.end{position:relative;overflow:hidden;min-height:82vh;padding:0;background:linear-gradient(#121214 0%,#2a100c 40%,#c4442a 75%,#ff9a7a 100%)}
+.end .sun{bottom:20%;animation:none;transform:translate(-50%,130%);opacity:0;transition:transform 2.6s cubic-bezier(.2,.7,.2,1),opacity 1.4s}
+.end.on .sun{transform:translate(-50%,40%);opacity:1}
+.end .mtn svg{animation:none}
+.endcopy{position:relative;z-index:3;text-align:center;padding:15vh 22px 0}
+.endcopy h2{margin:0 auto 28px;max-width:13ch;font-size:clamp(32px,6vw,72px)}
+.final{text-align:center;padding:120px 0}
+.final h2{margin:0 auto 30px;max-width:13ch;font-size:clamp(32px,6vw,72px)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:640px){.sun{box-shadow:0 0 60px 20px rgba(255,150,110,.5),0 0 140px 50px rgba(255,107,82,.4)}header .btn{padding:11px 20px}.copy{padding-top:150px}.fly{top:60%}.hero h1{font-size:7.6vw}section{padding:64px 0}.bento{gap:12px}.t{padding:22px;border-radius:22px}.a,.b{min-height:400px}.c,.d,.e{min-height:300px}.end{min-height:76vh}.hero .pill{font-size:13px}}
+@media(max-width:360px){.hn .tx{display:none}.btn{padding:13px 22px}.cta{gap:10px}.hero p{font-size:16px}}
+.off,.off *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.in{opacity:1;transform:none}.intro{display:none}.hud{opacity:1}.end .sun{transform:translate(-50%,40%);opacity:1}}
+</style>
+</head>
+<body>
+<div class="intro" aria-hidden="true"><b>Get<i>Zget</i></b></div>
+<header><div class="wrap"><a class="logo" href="https://getzget.com/">Get<i>Zget</i></a><div class="hn"><a class="tx" href="#gear">Gear</a><a class="tx" href="#end">Shop</a><a class="btn" href="https://getzget.com/collections">Shop all</a></div></div></header>
+<main>
+<section class="hero" id="top">
+<div class="px" style="--k:-10"><div class="sun"></div></div>
+<div class="px" style="--k:-16"><div class="mtn f"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#7a2a18" d="M0 400V210L90 170 170 215 270 130 360 200 450 150 560 230 660 120 760 205 860 160 960 235 1060 140 1160 210 1260 165 1350 215 1440 180V400Z"/></svg></div></div>
+<div class="fog"></div>
+<div class="px" style="--k:-28"><div class="mtn m"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#2e130e" d="M0 400V290L110 240 200 285 320 215 430 280 540 235 650 300 780 225 900 290 1010 245 1130 300 1250 250 1350 285 1440 255V400Z"/></svg></div></div>
+<div class="fly" aria-hidden="true"><svg viewBox="0 0 92 42"><g fill="#121214" stroke="#121214"><rect x="33" y="14" width="26" height="12" rx="5" stroke="none"/><path d="M33 16 14 8M59 16 78 8M33 24 16 31M59 24 76 31" stroke-width="3" fill="none"/><circle cx="46" cy="30" r="4.5" stroke="none"/><ellipse class="rt" cx="11" cy="7" rx="11" ry="2" stroke="none"/><ellipse class="rt" cx="81" cy="7" rx="11" ry="2" stroke="none"/><ellipse class="rt" cx="13" cy="32" rx="11" ry="2" stroke="none"/><ellipse class="rt" cx="79" cy="32" rx="11" ry="2" stroke="none"/></g><circle class="led" cx="46" cy="14" r="1.8" fill="#fff"/></svg></div>
+<div class="px" style="--k:-46"><div class="mtn n"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#121214" d="M0 400V340L140 300 260 335 400 285 520 335 680 305 820 345 960 300 1100 340 1240 310 1440 345V400Z"/></svg></div></div>
+<div class="copy">
+<span class="pill in">Next-day shipping from India</span>
+<h1 class="in">Gear to <span class="cy"><div><span>fly.</span><span>dive.</span><span>ride.</span><span>vlog.</span><span>fly.</span></div></span></h1>
+<p class="in">Filters, lenses, cases and bags for DJI, Insta360, GoPro and your phone.</p>
+<div class="cta in"><a class="btn" href="https://getzget.com/collections/hot-selling">Shop the sale</a><a class="btn ghost" href="#gear">Explore gear</a></div>
+</div>
+<div class="hud" aria-hidden="true"><i class="k1"></i><i class="k2"></i><i class="k3"></i><i class="k4"></i>
+<span class="tl">REC <b id="tc">00:00:00</b></span><span class="tr">4K 60 &nbsp; BAT 87%</span>
+<span class="bl">ALT <b id="alt">120</b> M &nbsp; SPD <b id="spd">8</b> M/S</span><span class="br">ISO 100 &nbsp; ND16 &nbsp; 1/120</span></div>
+</section>
+
+<div class="mq" aria-hidden="true"><div>
+<span>DJI Mini 5 Pro</span><b>/</b><span>Neo 2</span><b>/</b><span>Air 3S</span><b>/</b><span>Osmo Pocket 4</span><b>/</b><span>Insta360 X5</span><b>/</b><span>GoPro Hero</span><b>/</b><span>iPhone 17</span><b>/</b>
+<span>DJI Mini 5 Pro</span><b>/</b><span>Neo 2</span><b>/</b><span>Air 3S</span><b>/</b><span>Osmo Pocket 4</span><b>/</b><span>Insta360 X5</span><b>/</b><span>GoPro Hero</span><b>/</b><span>iPhone 17</span><b>/</b>
+</div></div>
+
+<section id="gear"><div class="wrap">
+<h2>Pick your kind of shot</h2>
+<div class="bento">
+<a class="t a" href="https://getzget.com/collections/dji-mini-5-pro-accessories"><div class="art rad"><i></i><i></i><i></i><svg class="drone" viewBox="0 0 300 190" aria-hidden="true"><defs>
+<linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#52525c"/><stop offset="1" stop-color="#1a1a20"/></linearGradient>
+<radialGradient id="pr"><stop offset="0" stop-color="#fff" stop-opacity=".05"/><stop offset=".65" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#ffbfa8" stop-opacity=".4"/></radialGradient>
+<radialGradient id="dl" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ff9a7a"/><stop offset=".5" stop-color="#2a1210"/><stop offset="1" stop-color="#000"/></radialGradient></defs>
+<g stroke-linecap="round"><path d="M122 84 84 58M178 84 216 58" stroke="#26262c" stroke-width="9" fill="none"/>
+<ellipse cx="82" cy="56" rx="11" ry="6" fill="#2a2a32"/><ellipse cx="218" cy="56" rx="11" ry="6" fill="#2a2a32"/>
+<ellipse class="rt" cx="82" cy="50" rx="38" ry="6" fill="url(#pr)"/><ellipse class="rt" cx="218" cy="50" rx="38" ry="6" fill="url(#pr)"/>
+<path d="M118 116 108 146M182 116 192 146" stroke="#2e2e36" stroke-width="5" fill="none"/><ellipse cx="106" cy="148" rx="9" ry="3" fill="#26262c"/><ellipse cx="194" cy="148" rx="9" ry="3" fill="#26262c"/>
+<rect x="102" y="76" width="96" height="42" rx="18" fill="url(#dg)" stroke="#5a5a64" stroke-width="1.2"/>
+<rect x="128" y="69" width="44" height="12" rx="6" fill="#2a2a32" stroke="#4a4a54"/>
+<path d="M114 84Q150 75 186 84" stroke="#fff" stroke-opacity=".28" stroke-width="2" fill="none"/>
+<rect x="116" y="93" width="24" height="9" rx="4.5" fill="#08080a" stroke="#ff6b52" stroke-opacity=".6"/><rect x="160" y="93" width="24" height="9" rx="4.5" fill="#08080a" stroke="#ff6b52" stroke-opacity=".6"/>
+<path d="M104 99 56 83M196 99 244 83" stroke="#2e2e36" stroke-width="11" fill="none"/><path d="M104 96 56 80M196 96 244 80" stroke="#5a5a64" stroke-opacity=".5" stroke-width="2" fill="none"/>
+<ellipse cx="52" cy="81" rx="14" ry="8" fill="#34343c" stroke="#5a5a64"/><ellipse cx="248" cy="81" rx="14" ry="8" fill="#34343c" stroke="#5a5a64"/>
+<ellipse class="rt" cx="52" cy="72" rx="46" ry="8" fill="url(#pr)" stroke="#ff6b52" stroke-opacity=".35"/><ellipse class="rt" cx="248" cy="72" rx="46" ry="8" fill="url(#pr)" stroke="#ff6b52" stroke-opacity=".35"/>
+<ellipse cx="52" cy="74" rx="5" ry="3" fill="#0b0b0d"/><ellipse cx="248" cy="74" rx="5" ry="3" fill="#0b0b0d"/>
+<circle class="led" cx="38" cy="85" r="2.6" fill="#ff6b52"/><circle class="led" cx="262" cy="85" r="2.6" fill="#fff"/>
+<rect x="146" y="114" width="8" height="8" fill="#2a2a32"/><circle cx="150" cy="130" r="17" fill="#1f1f26" stroke="#5a5a64" stroke-width="1.5"/><circle cx="150" cy="130" r="11" fill="#08080a" stroke="#ff6b52" stroke-width="2"/><circle cx="150" cy="130" r="7" fill="url(#dl)"/><circle cx="147" cy="127" r="2" fill="#fff"/></g></svg></div><h3>Drone</h3><u>Shop drone gear</u></a>
+<a class="t b" href="https://getzget.com/collections/17mm-lens-filter-phone-case-system"><div class="art"><svg class="lensv" viewBox="0 0 300 300" aria-hidden="true"><defs>
+<linearGradient id="mt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#74747e"/><stop offset=".5" stop-color="#1c1c22"/><stop offset="1" stop-color="#5a5a64"/></linearGradient>
+<radialGradient id="gl" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#2d1a16"/><stop offset=".55" stop-color="#0c0c10"/><stop offset="1" stop-color="#000"/></radialGradient>
+<radialGradient id="co"><stop offset=".55" stop-color="#ff6b52" stop-opacity="0"/><stop offset=".85" stop-color="#ff6b52" stop-opacity=".5"/><stop offset="1" stop-color="#ffd2a8" stop-opacity=".25"/></radialGradient>
+<radialGradient id="co2"><stop offset=".5" stop-color="#5ad1ff" stop-opacity="0"/><stop offset=".88" stop-color="#5ad1ff" stop-opacity=".28"/><stop offset="1" stop-color="#5ad1ff" stop-opacity="0"/></radialGradient>
+<path id="tp" d="M50 150a100 100 0 1 1 200 0a100 100 0 1 1-200 0"/></defs>
+<circle cx="150" cy="150" r="146" fill="url(#mt)" stroke="#0b0b0d" stroke-width="3"/>
+<g class="rg1"><circle cx="150" cy="150" r="128" fill="none" stroke="#0e0e12" stroke-width="16"/><circle cx="150" cy="150" r="128" fill="none" stroke="#6a6a74" stroke-width="16" stroke-dasharray="2.2 5.2"/></g>
+<circle cx="150" cy="150" r="116" fill="#111116" stroke="#0b0b0d" stroke-width="2"/>
+<g class="rg2"><text font-size="9" font-weight="700" letter-spacing="2" fill="#a8a8b3"><textPath href="#tp" textLength="610" lengthAdjust="spacing">17MM · 67MM FILTER THREAD · TELEPHOTO · MACRO · ANAMORPHIC · ND · CPL ·</textPath></text></g>
+<circle cx="150" cy="150" r="88" fill="#0a0a0e" stroke="#ff6b52" stroke-width="2.5" stroke-opacity=".9"/>
+<circle cx="150" cy="150" r="82" fill="url(#gl)"/><circle cx="150" cy="150" r="82" fill="url(#co)"/><circle cx="150" cy="150" r="66" fill="url(#co2)" stroke="#2a2a32"/>
+<circle cx="150" cy="150" r="56" fill="none" stroke="#ff6b52" stroke-opacity=".25"/>
+<g class="iris" style="transform-origin:150px 150px"><path id="bl" d="M150 150V98A52 52 0 0 1 199 132Z" fill="#17171d" stroke="#3a3a42"/><use href="#bl" transform="rotate(51.4 150 150)"/><use href="#bl" transform="rotate(102.9 150 150)"/><use href="#bl" transform="rotate(154.3 150 150)"/><use href="#bl" transform="rotate(205.7 150 150)"/><use href="#bl" transform="rotate(257.1 150 150)"/><use href="#bl" transform="rotate(308.6 150 150)"/></g>
+<circle cx="150" cy="150" r="17" fill="#050507"/><circle cx="150" cy="150" r="17" fill="url(#co)"/><circle cx="144" cy="144" r="3.5" fill="#fff" opacity=".85"/>
+<path d="M92 112A66 66 0 0 1 134 83" stroke="#fff" stroke-opacity=".6" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M208 194A66 66 0 0 1 178 216" stroke="#fff" stroke-opacity=".25" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M44 96A116 116 0 0 1 98 44" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div><h3>Phone filmmaking</h3><u>Build my kit</u></a>
+<a class="t c" href="https://getzget.com/collections/dji-osmo-action-camera-accessories"><div class="art"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><defs>
+<linearGradient id="wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f6a7c"/><stop offset=".55" stop-color="#0f2f3a"/><stop offset="1" stop-color="#0b1216"/></linearGradient>
+<linearGradient id="ry" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bff3ff" stop-opacity=".38"/><stop offset="1" stop-color="#bff3ff" stop-opacity="0"/></linearGradient>
+<radialGradient id="ul" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffb59e"/><stop offset=".45" stop-color="#2a1210"/><stop offset="1" stop-color="#000"/></radialGradient></defs>
+<rect width="300" height="300" fill="url(#wt)"/>
+<g class="ray"><path d="M60 0H100L40 230H-20Z" fill="url(#ry)"/></g><g class="ray" style="animation-delay:-2s"><path d="M150 0H200L170 250H90Z" fill="url(#ry)"/></g><g class="ray" style="animation-delay:-4s"><path d="M240 0H280L330 220H250Z" fill="url(#ry)"/></g>
+<g class="wvx" style="animation-duration:7s;"><path d="M-150 24Q-112 6 -75 24T0 24T75 24T150 24T225 24T300 24T375 24T450 24V0H-150Z" fill="#bff3ff" fill-opacity="0.38"/></g><g class="wvx" style="animation-duration:10s;animation-direction:reverse"><path d="M-150 14Q-112 -4 -75 14T0 14T75 14T150 14T225 14T300 14T375 14T450 14V0H-150Z" fill="#bff3ff" fill-opacity="0.2"/></g>
+<g style="animation:sw 15s linear infinite;animation-delay:0s"><path d="M0 0Q10 -6 20 0Q10 6 0 0L-8 -5V5Z" fill="#fff" fill-opacity=".38" transform="translate(0,228) scale(1)"/></g><g style="animation:sw 15s linear infinite;animation-delay:-5s"><path d="M0 0Q10 -6 20 0Q10 6 0 0L-8 -5V5Z" fill="#fff" fill-opacity=".38" transform="translate(0,206) scale(0.8)"/></g><g style="animation:sw 15s linear infinite;animation-delay:-9s"><path d="M0 0Q10 -6 20 0Q10 6 0 0L-8 -5V5Z" fill="#fff" fill-opacity=".38" transform="translate(0,252) scale(1.2)"/></g>
+<g class="cam" style="transform-origin:150px 115px">
+<rect x="112" y="74" width="76" height="88" rx="18" fill="#bff3ff" fill-opacity=".12" stroke="#d8f6ff" stroke-opacity=".7" stroke-width="2"/>
+<rect x="138" y="65" width="24" height="10" rx="5" fill="#ff6b52"/><rect x="105" y="100" width="9" height="28" rx="4" fill="#ff6b52"/><rect x="186" y="100" width="9" height="28" rx="4" fill="#ff6b52"/>
+<rect x="122" y="86" width="56" height="62" rx="11" fill="#1c1c22" stroke="#5a5a64"/>
+<circle cx="150" cy="110" r="18" fill="#08080a" stroke="#ff6b52" stroke-width="2.5"/><circle cx="150" cy="110" r="12" fill="url(#ul)"/><circle cx="145" cy="105" r="3" fill="#fff"/>
+<rect x="132" y="133" width="36" height="11" rx="3" fill="#0e1a22" stroke="#3a3a42"/>
+<rect x="140" y="162" width="20" height="10" rx="3" fill="#6a6a74"/><path d="M146 172v8M154 172v8" stroke="#6a6a74" stroke-width="4" stroke-linecap="round"/>
+<rect x="196" y="72" width="62" height="22" rx="11" fill="#000" fill-opacity=".4" stroke="#fff" stroke-opacity=".3"/><text x="227" y="87" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" font-family="DM Sans,sans-serif">60 m</text></g>
+<circle class="bb2" cx="112" cy="215" r="3.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:0s"/><circle class="bb2" cx="196" cy="225" r="4.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:-1.3s"/><circle class="bb2" cx="160" cy="240" r="2.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:-2.4s"/><circle class="bb2" cx="128" cy="190" r="2" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:-3.2s"/><circle class="bb2" cx="204" cy="200" r="2.6" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:-0.7s"/><circle class="bb2" cx="94" cy="245" r="3" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.5" style="animation-delay:-2s"/></svg></div><h3>Underwater</h3><u>Shop dive cases</u></a>
+<a class="t d" href="https://getzget.com/collections/universal-action-camera-accessories"><div class="art"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><defs>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0f0e"/><stop offset=".6" stop-color="#6a2316"/><stop offset="1" stop-color="#e0522f"/></linearGradient>
+<linearGradient id="cv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffd2c2" stop-opacity=".55"/><stop offset="1" stop-color="#ffd2c2" stop-opacity="0"/></linearGradient></defs>
+<rect width="300" height="300" fill="url(#sk)"/><circle cx="228" cy="172" r="62" fill="#ff9a7a" opacity=".25"/><circle cx="228" cy="172" r="32" fill="#ffe3c4"/>
+<path d="M0 215L40 185 80 205 130 170 180 205 230 182 300 210V230H0Z" fill="#2e130e"/><path d="M0 226L60 206 110 222 170 202 240 222 300 208V240H0Z" fill="#18181c"/>
+<rect y="219" width="300" height="81" fill="#18181c"/><path d="M0 219H300" stroke="#3a3a42"/><path class="rd" d="M0 252H300" stroke="#ff9a7a" stroke-opacity=".65" stroke-width="3" fill="none"/>
+<g stroke="#fff" stroke-linecap="round" stroke-width="2.5" fill="none"><path class="spl" d="M60 130h40"/><path class="spl" style="animation-delay:-.45s" d="M42 160h50"/><path class="spl" style="animation-delay:-.9s" d="M72 190h32"/></g>
+<g class="bk"><path d="M200 78L300 36V122Z" fill="url(#cv)"/>
+<g stroke="#ececef" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<circle cx="95" cy="185" r="34"/><circle cx="215" cy="185" r="34"/>
+<path d="M95 185L140 138 205 138 152 185ZM140 138L152 185M205 138L212 152 215 185M205 138L212 122 228 126M126 134H150"/></g>
+<g stroke="#8a8a95" stroke-width="1.3"><g class="wh" style="transform-origin:95px 185px"><path d="M95 185L125.0 185.0"/><path d="M95 185L116.2 206.2"/><path d="M95 185L95.0 215.0"/><path d="M95 185L73.8 206.2"/><path d="M95 185L65.0 185.0"/><path d="M95 185L73.8 163.8"/><path d="M95 185L95.0 155.0"/><path d="M95 185L116.2 163.8"/></g><g class="wh" style="transform-origin:215px 185px"><path d="M215 185L245.0 185.0"/><path d="M215 185L236.2 206.2"/><path d="M215 185L215.0 215.0"/><path d="M215 185L193.8 206.2"/><path d="M215 185L185.0 185.0"/><path d="M215 185L193.8 163.8"/><path d="M215 185L215.0 155.0"/><path d="M215 185L236.2 163.8"/></g></g>
+<g fill="none" stroke="#ff6b52" stroke-linecap="round" stroke-linejoin="round"><path d="M138 128L186 102" stroke-width="17"/><path d="M186 102L214 124" stroke-width="7"/><path d="M138 128L166 158 156 190" stroke-width="10"/><path d="M138 128L154 160 146 183" stroke-width="9" opacity=".55"/></g>
+<circle cx="197" cy="88" r="11" fill="#ffd2c2"/><path d="M185 86Q197 70 210 84L208 90H186Z" fill="#ff6b52"/>
+<rect x="194" y="72" width="16" height="10" rx="3" fill="#1c1c22" stroke="#fff" stroke-width="1"/><circle cx="206" cy="77" r="2.4" fill="#ff6b52"/><circle class="led" cx="198" cy="75" r="1.4" fill="#ff3b3b"/></g></svg></div><h3>Riding</h3><u>Shop mounts</u></a>
+<a class="t e" href="https://getzget.com/collections/hot-selling"><div class="big" id="n" data-v="4.72">0.00</div><div class="stars">★★★★★</div><h3>Loved by creators</h3><p>From 287 reviews in India, the UK, USA and Germany.</p></a>
+</div></div></section>
+
+<section class="end" id="end"><div class="sun"></div><div class="mtn f"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#7a2a18" d="M0 400V210L90 170 170 215 270 130 360 200 450 150 560 230 660 120 760 205 860 160 960 235 1060 140 1160 210 1260 165 1350 215 1440 180V400Z"/></svg></div><div class="fog"></div><div class="mtn m"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#2e130e" d="M0 400V290L110 240 200 285 320 215 430 280 540 235 650 300 780 225 900 290 1010 245 1130 300 1250 250 1350 285 1440 255V400Z"/></svg></div><div class="mtn n"><svg viewBox="0 0 1440 400" preserveAspectRatio="none"><path fill="#121214" d="M0 400V340L140 300 260 335 400 285 520 335 680 305 820 345 960 300 1100 340 1240 310 1440 345V400Z"/></svg></div><div class="endcopy"><h2>Your next shot starts here.</h2><a class="btn" href="https://getzget.com/collections">Browse all gear</a></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 GetZget · Retail and wholesale since 2020</span><span>support@getzget.com</span></div></footer>
+<script>
+(function(){
+var rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// spotlight on tiles
+[].forEach.call(document.querySelectorAll(".t"),function(t){t.addEventListener("pointermove",function(e){var r=t.getBoundingClientRect();t.style.setProperty("--mx",(e.clientX-r.left)+"px");t.style.setProperty("--my",(e.clientY-r.top)+"px")})});
+// counter
+var n=document.getElementById("n"),to=parseFloat(n.dataset.v);
+function count(){if(rm){n.textContent=to.toFixed(2);return}var s=null;function f(ts){s=s||ts;var p=Math.min((ts-s)/1400,1);n.textContent=(to*(1-Math.pow(1-p,3))).toFixed(2);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(a){if(a[0].isIntersecting){count();io.disconnect()}},{threshold:.5});io.observe(n)}else{count()}
+
+var hero=document.querySelector(".hero");
+if(!rm&&matchMedia("(hover:hover)").matches){hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();hero.style.setProperty("--px",((e.clientX-r.left)/r.width-.5)*2);hero.style.setProperty("--py",((e.clientY-r.top)/r.height-.5)*2)})}
+var tc=document.getElementById("tc"),alt=document.getElementById("alt"),spd=document.getElementById("spd"),sec=0;
+function two(v){return(v<10?"0":"")+v}
+if(!rm){setInterval(function(){sec++;tc.textContent="00:"+two(Math.floor(sec/60)%60)+":"+two(sec%60)},1000);
+setInterval(function(){alt.textContent=118+Math.round(Math.sin(Date.now()/1500)*6);spd.textContent=7+Math.round(Math.random()*3)},500)}
+var en=document.getElementById("end");
+if("IntersectionObserver" in window){new IntersectionObserver(function(a,o){if(a[0].isIntersecting){en.classList.add("on");o.disconnect()}},{threshold:.3}).observe(en)}else{en.classList.add("on")}
+try{history.scrollRestoration="manual"}catch(e){}
+if(location.hash){try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}}
+scrollTo(0,0);addEventListener("load",function(){scrollTo(0,0)});
+var hd=document.querySelector("header");
+addEventListener("scroll",function(){hd.classList.toggle("sc",scrollY>40)},{passive:true});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:rm?"auto":"smooth"})}});
+if("IntersectionObserver" in window){var po=new IntersectionObserver(function(a){a.forEach(function(x){x.target.classList.toggle("off",!x.isIntersecting)})},{rootMargin:"120px"});[].forEach.call(document.querySelectorAll(".hero,.t,.end"),function(x){po.observe(x)})}
+})();
+</script>
+</body>
+</html>
